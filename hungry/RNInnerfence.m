@@ -6,7 +6,7 @@
 //  Copyright © 2015 Inner Fence. All rights reserved.
 //
 
-#import "RNInnerfenceModule.h"
+#import "RNInnerfence.h"
 
 #import "React/RCTBridge.h"
 #import "React/RCTConvert.h"
@@ -14,7 +14,7 @@
 #import "../innerfence/IFChargeRequest.h"
 #import "../innerfence/IFChargeResponse.h"
 
-@interface RNInnerfenceModule ()
+@interface RNInnerfence ()
 
 RCT_EXPORT_MODULE();
 
@@ -25,7 +25,7 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location)
 
 @end
 
-@implementation RNInnerfenceModule
+@implementation RNInnerfence
 
 - (void)viewDidLoad {
     [super viewDidLoad];
