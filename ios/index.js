@@ -1,2 +1,11 @@
-import { NativeModules } from 'react-native'
-var Innerfence = NativeModules.RNInnerfenceModule
+import { NativeModules } from "react-native";
+
+const { RNInnerFence } = NativeModules;
+
+export default RNInnerFence;
+
+import { NativeModules } from "react-native";
+
+const { RNInnerFence } = NativeModules;
+
+export default RNInnerFence;
