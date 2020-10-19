@@ -32,7 +32,7 @@ declare module "hungry-inner-fence" {
     }
     
     export class RNInnerFence {
-        static addEvent(params: PaymentParams): Promise<PaymentConfirmation>;
+        static addEvent(name: String, location: String): Promise<PaymentConfirmation>;
     }
 
     export default RNInnerFence;
