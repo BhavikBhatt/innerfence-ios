@@ -18,8 +18,14 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location){
-  RCTLogInfo(@"Pretending to create an event %@ at %@", name, location);
+RCT_EXPORT_METHOD(getDeviceName:(RCTResponseSenderBlock)callback){
+ @try{
+   NSString *deviceName = [[UIDevice currentDevice] name];
+   callback(@[[NSNull null], deviceName]);
+ }
+ @catch(NSException *exception){
+   callback(@[exception.reason, [NSNull null]]);
+ }
 }
 
 @end
