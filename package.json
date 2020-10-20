@@ -1,16 +1,22 @@
 {
   "name": "hungry-inner-fence",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.9",
+  "description": "A wrapper for the paypal sdk for both android and ios.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BhavikBhatt/innerfence-ios.git"
+  },
+  "keywords": [
+    "react-native",
+    "ios"
+  ],
+  "author": "BhavikBhatt",
+  "license": "MIT",
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react-native": "^0.41.2"
   }
 }
