@@ -33,6 +33,7 @@ declare module "hungry-inner-fence" {
     }
     
     export class RNInnerfence {
+        static addEvent(name: String, location: String): Promise<void>;
     }
 
     export default RNInnerfence;
