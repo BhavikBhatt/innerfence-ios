@@ -31,10 +31,10 @@ declare module "hungry-inner-fence" {
         location: String,
     }
     
-    export class RNInnerFence {
+    export class RNInnerfence {
         static addEvent(name: String, location: String): Promise<void>;
     }
 
-    export default RNInnerFence;
+    export default RNInnerfence;
 
 }
