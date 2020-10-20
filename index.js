@@ -1,5 +1,5 @@
 import { NativeModules } from "react-native";
 
-const { RNInnerFence } = NativeModules;
+const { RNInnerfence } = NativeModules;
 
-export default RNInnerFence;
+export default RNInnerfence;
