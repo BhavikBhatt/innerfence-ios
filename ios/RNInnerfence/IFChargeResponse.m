@@ -269,21 +269,5 @@ static NSDictionary* _responseCodes;
     }
 }
 
-- (void)dealloc
-{
-    [_baseURL release];
-    [_amount release];
-    [_cardType release];
-    [_currency release];
-    [_extraParams release];
-    [_redactedCardNumber release];
-    [_responseType release];
-    [_transactionId release];
-    [_taxAmount release];
-    [_taxRate release];
-    [_tipAmount release];
-
-    [super dealloc];
-}
 
 @end

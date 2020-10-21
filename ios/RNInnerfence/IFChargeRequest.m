@@ -223,7 +223,6 @@ static char _nonceAlphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv
 
     // Convert to NSURL
     NSURL* url = [NSURL URLWithString:urlString];
-    [urlString release];
     return url;
 }
 
@@ -262,7 +261,6 @@ static char _nonceAlphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv
     }
 
     self.returnURL = urlString;
-    [urlString release];
 }
 
 #if TARGET_OS_IPHONE
@@ -321,33 +319,5 @@ static char _nonceAlphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv
 }
 
 #endif
-
-- (void)dealloc
-{
-    _delegate = nil;
-
-    [_returnAppName release];
-    [_returnURL release];
-    [_returnImmediately release];
-
-    [_address release];
-    [_amount release];
-    [_amountFixed release];
-    [_city release];
-    [_company release];
-    [_country release];
-    [_currency release];
-    [_description release];
-    [_email release];
-    [_firstName release];
-    [_invoiceNumber release];
-    [_lastName release];
-    [_phone release];
-    [_state release];
-    [_taxRate release];
-    [_zip release];
-
-    [super dealloc];
-}
 
 @end
