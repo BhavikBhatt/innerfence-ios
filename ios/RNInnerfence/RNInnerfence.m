@@ -20,7 +20,7 @@
 
 @implementation RNInnerfence
 
-- (IBAction)chargeTapped:(id)sender {
+- (IBAction)paymentRequest:(id)sender {
     IFChargeRequest* chargeRequest = [IFChargeRequest new];
 
     // Include my record_id so it comes back with the response
