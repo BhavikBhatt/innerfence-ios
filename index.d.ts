@@ -40,9 +40,9 @@ declare module "hungry-inner-fence" {
     }
     
     export class RNInnerfence {
-      static paymentRequest(email: String): Promise<PaymentConfirmation>;
+      static paymentRequest(params: PaymentParams): Promise<String>;
     }
-
+    
     export default RNInnerfence;
 
 }
