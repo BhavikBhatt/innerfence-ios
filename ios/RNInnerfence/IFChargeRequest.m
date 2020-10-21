@@ -55,7 +55,7 @@ static NSString* IFEncodeURIComponent( NSString* s )
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated"
     CFStringRef encodedValue =
-        CFURLCreateStringByAddingPercentEscapes(
+         (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(
             kCFAllocatorDefault,
             (CFStringRef)s,
             NULL,
