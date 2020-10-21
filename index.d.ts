@@ -1,7 +1,14 @@
 declare module "hungry-inner-fence" {
 
-    export interface PaymentConfirmation {
-    }
+   export interface PaymentConfirmation {
+      status: String,
+      recordId: String,
+      transactionId: String,
+      amount: String,
+      currency: String,
+      cardType: String,
+      redactedCardNumber: String,
+  }
 
     export interface PaymentParams {
         address: String,
@@ -33,7 +40,7 @@ declare module "hungry-inner-fence" {
     }
     
     export class RNInnerfence {
-        static addEvent(name: String, location: String): Promise<void>;
+        static paymentRequest(id: String): Promise<PaymentConfirmation>;
     }
 
     export default RNInnerfence;

@@ -14,13 +14,32 @@
 #import "../innerfence/IFChargeRequest.h"
 #import "../innerfence/IFChargeResponse.h"
 
+@interface RNInnerfence ()
+
+@end
+
 @implementation RNInnerfence
 
-RCT_EXPORT_MODULE();
+- (IBAction)chargeTapped:(id)sender {
+    IFChargeRequest* chargeRequest = [IFChargeRequest new];
 
-RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location)
-{
-  RCTLogInfo(@"Pretending to create an event %@ at %@", name, location);
+    // Include my record_id so it comes back with the response
+    [chargeRequest
+        setReturnURL:@"com-innerfence-ChargeDemo://chargeResponse"
+        withExtraParams:@{ @"record_id": @"123" }
+    ];
+
+    chargeRequest.amount        = @"50.00";
+    chargeRequest.description   = @"Test transaction";
+    chargeRequest.invoiceNumber = @"321";
+
+    // Include a tax rate if you want Credit Card terminal to calculate
+    // sales tax. If you pass in @"default", we'll use the default sales
+    // tax preset by the user. If you leave it as nil, we’ll hide the
+    // sales tax option from the user.
+    chargeRequest.taxRate = @"8.5";
+
+    [chargeRequest submit];
 }
 
 @end
