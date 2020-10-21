@@ -64,7 +64,7 @@ static NSString* IFEncodeURIComponent( NSString* s )
         );
 #pragma clang diagnostic push
 
-    return [NSMakeCollectable( encodedValue )];
+    return encodedValue;
 }
 
 #endif
@@ -167,7 +167,7 @@ static char _nonceAlphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv
 
 - (NSString*)createAndStoreNonce
 {
-    NSMutableString* nonceString = [[[NSMutableString alloc] initWithCapacity:kNonceLength]];
+    NSMutableString* nonceString = [[NSMutableString alloc] initWithCapacity:kNonceLength];
     for ( NSUInteger i = 0; i < kNonceLength; i++ )
     {
         [nonceString appendFormat:@"%c", _nonceAlphabet[ ( arc4random() & kNonceAlphabetMask ) ]];
@@ -189,13 +189,13 @@ static char _nonceAlphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv
 #if TARGET_OS_IPHONE
     else
     {
-        [[[[UIAlertView alloc]
+        [[[UIAlertView alloc]
             initWithTitle:IF_CHARGE_NOT_INSTALLED_TITLE
             message:IF_CHARGE_NOT_INSTALLED_MESSAGE
             delegate:nil
             cancelButtonTitle:IF_CHARGE_NOT_INSTALLED_BUTTON
             otherButtonTitles:nil
-        ]] show];
+        ] show];
     }
 #endif
 }
