@@ -64,7 +64,7 @@ static NSString* IFEncodeURIComponent( NSString* s )
         );
 #pragma clang diagnostic push
 
-    return [NSMakeCollectable( encodedValue ) autorelease];
+    return [NSMakeCollectable( encodedValue )];
 }
 
 #endif
@@ -167,7 +167,7 @@ static char _nonceAlphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv
 
 - (NSString*)createAndStoreNonce
 {
-    NSMutableString* nonceString = [[[NSMutableString alloc] initWithCapacity:kNonceLength] autorelease];
+    NSMutableString* nonceString = [[[NSMutableString alloc] initWithCapacity:kNonceLength]];
     for ( NSUInteger i = 0; i < kNonceLength; i++ )
     {
         [nonceString appendFormat:@"%c", _nonceAlphabet[ ( arc4random() & kNonceAlphabetMask ) ]];
@@ -195,7 +195,7 @@ static char _nonceAlphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv
             delegate:nil
             cancelButtonTitle:IF_CHARGE_NOT_INSTALLED_BUTTON
             otherButtonTitles:nil
-        ] autorelease] show];
+        ]] show];
     }
 #endif
 }
