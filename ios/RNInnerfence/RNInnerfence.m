@@ -11,8 +11,8 @@
 #import "React/RCTBridge.h"
 #import "React/RCTConvert.h"
 
-#import "../innerfence/IFChargeRequest.h"
-#import "../innerfence/IFChargeResponse.h"
+#import "IFChargeRequest.h"
+#import "IFChargeResponse.h"
 
 @interface RNInnerfence ()
 
