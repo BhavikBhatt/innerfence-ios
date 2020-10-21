@@ -16,11 +16,17 @@
 
 @interface RNInnerfence ()
 
+@property (copy) RCTPromiseResolveBlock resolve;
+@property (copy) RCTPromiseRejectBlock reject;
+
 @end
 
 @implementation RNInnerfence
 
-- (IBAction)paymentRequest:(id)sender {
+RCT_EXPORT_MODULE()
+
+RCT_REMAP_METHOD(paymentRequest: (NSString *)email, resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
     IFChargeRequest* chargeRequest = [IFChargeRequest new];
 
     // Include my record_id so it comes back with the response
@@ -40,6 +46,7 @@
     chargeRequest.taxRate = @"8.5";
 
     [chargeRequest submit];
-}
 
+}
+    
 @end
