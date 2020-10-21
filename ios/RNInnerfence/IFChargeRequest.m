@@ -57,7 +57,7 @@ static NSString* IFEncodeURIComponent( NSString* s )
     CFStringRef encodedValue =
          (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(
             kCFAllocatorDefault,
-            (CFStringRef)s,
+            (__bridge CFStringRef)s,
             NULL,
             (CFStringRef)URI_RESERVED_CHARS,
             kCFStringEncodingUTF8
